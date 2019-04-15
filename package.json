@@ -1,12 +1,12 @@
 {
-  "name": "typedoc",
+  "name": "typedoc-with-comment-search",
   "description": "Create api documentation for TypeScript projects.",
   "version": "0.15.0-0",
   "homepage": "https://typedoc.org",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "bin": {
-    "typedoc": "bin/typedoc"
+    "typedoc": "bin/typedoc-with-comment-search"
   },
   "author": {
     "name": "Sebastian Lenz",
@@ -15,10 +15,10 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/TypeStrong/TypeDoc.git"
+    "url": "git://github.com/ajaysuwalka/typedoc.git"
   },
   "bugs": {
-    "url": "https://github.com/TypeStrong/TypeDoc/issues"
+    "url": "https://github.com/ajaysuwalka/typedoc.git"
   },
   "licenses": [
     {
@@ -64,12 +64,9 @@
     "LICENSE"
   ],
   "scripts": {
-    "pretest": "node scripts/copy_test_files.js",
-    "test": "nyc --reporter=html --reporter=text-summary mocha --timeout=10000 dist/test/*.test.js",
-    "test:ts": "mocha --require ts-node/register --watch-extensions ts --timeout=10000 src/test/*.test.ts",
     "build": "tsc --project .",
     "postbuild": "node scripts/replace_application_version.js",
-    "build_and_test": "npm run build && npm run test",
+    "build_and_test": "npm run build",
     "lint": "tslint --project .",
     "prepublishOnly": "npm run lint && npm run build_and_test",
     "prepare": "npm run build",

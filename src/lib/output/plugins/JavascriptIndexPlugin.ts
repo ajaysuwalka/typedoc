@@ -49,9 +49,11 @@ export class JavascriptIndexPlugin extends RendererComponent {
 
             const row: any = {
                 id: rows.length,
-                kind:    reflection.kind,
-                name:    reflection.name,
-                url:     reflection.url,
+                kind: reflection.kind,
+                name: reflection.name + ' ' +
+                    (reflection.comment ?
+                        (reflection.comment.text.length === 0 ?  reflection.comment.shortText : reflection.comment.text) : ''),
+                url: reflection.url,
                 classes: reflection.cssClasses
             };
 
